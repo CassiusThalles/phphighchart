@@ -33,7 +33,7 @@ foreach($json->quotes as $quotes):
     array_push($myArr, $quotes);
 endforeach;
 $myArr = json_encode($myArr);
-print_r($myArr);
+//print_r($myArr);
 //echo "<br/><br/><br/>"
 
 ?>
@@ -68,16 +68,16 @@ print_r($myArr);
 Highcharts.chart('container', {
 
     title: {
-        text: 'Solar Employment Growth by Sector, 2010-2016'
+        text: 'Price of BRL, EUR and ARS currencies based on US Dollar'
     },
 
     subtitle: {
-        text: 'Source: thesolarfoundation.com'
+        text: 'Source: currencylayer api'
     },
 
     yAxis: {
         title: {
-            text: 'Number of Employees'
+            text: 'price in USD'
         }
     },
     legend: {
@@ -96,7 +96,7 @@ Highcharts.chart('container', {
     },
 
     series: [{
-        name: 'Project Development',
+        name: 'currency',
         data: [<?php print_r($myArr); ?>]
     }],
 
